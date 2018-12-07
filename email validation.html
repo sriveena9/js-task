@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>Test Page</title>
+    </head>
+    <body>
+       
+        <form name="myForm" action="" onsubmit="return(validateEmail());" method="post">
+            <input pattern="([c]{1}[a-zA-Z0-9]{1,6}[0-9]{3})+@[caravel]+\.[ai]{2}" name="email" id='email' value="" placeholder="enter email"/>
+            <button type="submit" id='validate'>submit</button>
+        </form>
+
+
+
+        <div class="flex">
+            <p id="foreach" class="test"></p>
+            <div>
+                <p id="mapid" class="test"></p>            
+            </div>
+        </div>
+    </body>
+    <footer>
+        <script>
+            /* Form Validations*/
+            function validateEmail(email){
+                if( document.myForm.email.value == "" )
+                    {
+                        alert( "Please provide your email!" );
+                        document.myForm.email.focus() ;
+                        return false;
+                    }
+                    else{
+                        alert("Success");
+                        return true;
+                    }
+                // var emailID = document.myForm.email.value;
+                // var re = /^([c]{1}[a-zA-Z0-9]{1,6}[0-9]{3})+@[caravel]+\.[ai]{2}$/;
+                // if (emailID == '' || !re(emailID))
+                // {
+                //     alert('Please enter a valid email address.');
+                //     return false;
+                // }
+            }
+        </script>
+        <style>
+            button{                
+                padding: 5px 25px;
+                background: #0000a9;
+                color: white;
+                border: black;                    
+                cursor: pointer;
+            }
+            .test{width: 25%;}
+            .mystyle {
+                width: 100%;
+                padding: 5px 25px;
+                color: white;
+                font-size: 25px;
+                box-sizing: border-box;
+                font-weight: 600;
+                text-align: center;
+            }
+            .mystyle0, .mystyle4 {
+                background: red;
+            }
+            .mystyle1, .mystyle5 {
+                background: black;
+            }
+            .mystyle2 {
+                background: green;
+                color: black;
+            }
+            .mystyle3 {
+                background: darkblue;
+            }
+            .flex{
+                display: flex;
+                justify-content: space-evenly;
+            }
+        </style>
+    </footer>
+</html>
